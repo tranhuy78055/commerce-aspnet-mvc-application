@@ -11,30 +11,42 @@ namespace eTickets.Data.Services
         {
             _context = context;
         }
-        public void Add(Actor actor)
+
+        public async Task AddAsync(Actor actor)
         {
-            throw new NotImplementedException();
+            await _context.Actors.AddAsync(actor);
+            await _context.SaveChangesAsync();
         }
 
-        public void Delete(int id)
+
+        public void DeleteAsync(int id)
         {
-            throw new NotImplementedException();
+
+            //var actor = _context.Actors.FirstOrDefault(n => n.ActorId == id);
+            //if (actor == null) throw new KeyNotFoundException($"Actor with id {id} not found.");
+            //_context.Actors.Remove(actor);
+            //_context.SaveChanges();
         }
 
-        public async Task<IEnumerable<Actor>> GetAll()
+
+        public async Task<IEnumerable<Actor>> GetAllAsync()
         {
             var result = await _context.Actors.ToListAsync();
-            return result;
+            return result ?? new List<Actor>();
         }
 
-        public Actor GetById(int id)
+        public async Task<Actor> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var result = await _context.Actors.FirstOrDefaultAsync(n => n.ActorId == id);
+            return result ?? throw new KeyNotFoundException($"Actor with id {id} not found.");
         }
 
-        public Actor Update(int id, Actor newActor)
+             
+        public async Task<Actor> UpdateAsync(int id, Actor newActor)
         {
-            throw new NotImplementedException();
+           _context.Actors.Update(newActor);
+            await _context.SaveChangesAsync();
+            return newActor;
         }
     }
-}
+} 
