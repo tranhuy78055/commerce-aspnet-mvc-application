@@ -19,13 +19,14 @@ namespace eTickets.Data.Services
         }
 
 
-        public void DeleteAsync(int id)
+        public async Task DeleteAsync(int id)
         {
-
-            //var actor = _context.Actors.FirstOrDefault(n => n.ActorId == id);
-            //if (actor == null) throw new KeyNotFoundException($"Actor with id {id} not found.");
-            //_context.Actors.Remove(actor);
-            //_context.SaveChanges();
+            var actor = await _context.Actors.FirstOrDefaultAsync(n => n.ActorId == id);
+            if (actor != null)
+            {
+                _context.Actors.Remove(actor);
+                await _context.SaveChangesAsync();
+            }
         }
 
 
@@ -38,7 +39,7 @@ namespace eTickets.Data.Services
         public async Task<Actor> GetByIdAsync(int id)
         {
             var result = await _context.Actors.FirstOrDefaultAsync(n => n.ActorId == id);
-            return result ?? throw new KeyNotFoundException($"Actor with id {id} not found.");
+            return result;
         }
 
              
