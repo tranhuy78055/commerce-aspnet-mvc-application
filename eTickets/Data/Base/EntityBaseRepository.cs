@@ -23,7 +23,7 @@ namespace eTickets.Data.Base
             var entity = await _context.Set<T>().FirstOrDefaultAsync(n => n.Id == id);
             EntityEntry entityEntry = _context.Entry<T>(entity);
             entityEntry.State = EntityState.Deleted;
-
+            //await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
@@ -43,7 +43,7 @@ namespace eTickets.Data.Base
         {
             EntityEntry entityEntry = _context.Entry(Entity);
             entityEntry.State = EntityState.Modified;
-
+            await _context.SaveChangesAsync();
         }
     }
 }
