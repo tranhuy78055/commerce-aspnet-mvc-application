@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace eTickets.Data.Services
 {
-    public class ActorsServices: EntityBaseRepository<Actor>, IActorsServices
+    public class ActorsService: EntityBaseRepository<Actor>, IActorsServices
     {
        
-        public ActorsServices(AppDbContext context): base(context)
+        public ActorsService(AppDbContext context): base(context)
         {
 
         }
