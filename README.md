@@ -46,7 +46,7 @@ eTickets is a Blazor-based web application for buying movie tickets online. The 
 - docker-compose up -d
 
 
-**2. Access the application at `http://localhost:8001/Movies`.**
+**2. Access the application at `https://localhost:53639/Movies`.**
 
 ## Usage
 
