@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eTickets", "eTickets\eTickets.csproj", "{60FA7962-B922-435E-B5B1-C9A625EC559A}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{42DD80E2-4CF0-4125-8F40-C50708AB9B4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{60FA7962-B922-435E-B5B1-C9A625EC559A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60FA7962-B922-435E-B5B1-C9A625EC559A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60FA7962-B922-435E-B5B1-C9A625EC559A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42DD80E2-4CF0-4125-8F40-C50708AB9B4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42DD80E2-4CF0-4125-8F40-C50708AB9B4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42DD80E2-4CF0-4125-8F40-C50708AB9B4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42DD80E2-4CF0-4125-8F40-C50708AB9B4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

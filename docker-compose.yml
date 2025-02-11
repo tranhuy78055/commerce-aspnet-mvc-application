@@ -1,0 +1,27 @@
+networks:
+  demoapp:
+services:
+  demoappdb:
+    container_name: app-dp
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+      - 8002:1433
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Password@123#"
+    networks:
+      - demoapp
+  etickets:
+    container_name: demo-etickets
+    image: ${DOCKER_REGISTRY-}etickets
+    build:
+      context: .
+      dockerfile: eTickets/Dockerfile
+    ports:
+     - 8001:80
+    depends_on:
+      - demoappdb
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=demoappdb;Database=ecommerce-app-db;User=sa;Password=Password@123#;TrustServerCertificate=True"
+    networks:
+      - demoapp
