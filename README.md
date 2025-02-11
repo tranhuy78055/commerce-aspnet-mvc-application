@@ -41,7 +41,8 @@ eTickets is a Blazor-based web application for buying movie tickets online. The 
 🐳 **Docker Setup**
 **1. Build and run the Docker containers:**
 - docker-compose up --build
-Download the Docker Compose file [here](https://drive.google.com/file/d/1QC2wD1A8mVTSeZamUANQVBImu_3sDkso/view?usp=drive_link) if you just want to check it out.
+  
+*Download the Docker Compose file [here](https://drive.google.com/file/d/1QC2wD1A8mVTSeZamUANQVBImu_3sDkso/view?usp=drive_link) if you just want to check it out.
 - docker-compose up -d
 
 
